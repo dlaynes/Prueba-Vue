@@ -36,9 +36,6 @@ export default {
     },
     methods: {
         save(){
-            if(this.saving) return;
-
-            this.saving = true;
 
             //alert("Saving!");
             if(this.player.name == ''){
@@ -55,7 +52,6 @@ export default {
                 return;
             }
             EventBus.$emit('edit-player', this.player);
-            this.saving = false;
         },
         cancel(){
             //alert("Cancel!");
